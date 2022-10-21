@@ -1,0 +1,13 @@
+package com.satish.assignment.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+public class HelloObject {
+    private String message;
+
+    public HelloObject(String message) {
+        this.message = message;
+    }
+}

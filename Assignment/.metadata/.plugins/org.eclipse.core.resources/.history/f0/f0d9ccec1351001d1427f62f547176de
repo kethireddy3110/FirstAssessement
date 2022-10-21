@@ -1,0 +1,27 @@
+package com.satish.assignment.service;
+
+import com.satish.assignment.model.User;
+import com.satish.assignment.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class UserService {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    public List<User> getAllUsers() {
+        return userRepository();
+    }
+
+    public User getUserById(int id) {
+        return userRepository.getUserById(id);
+    }
+
+    public void createUser(User user) {
+        userRepository.createUser(user);
+    }
+}

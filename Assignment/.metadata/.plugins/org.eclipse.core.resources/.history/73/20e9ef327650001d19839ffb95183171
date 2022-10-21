@@ -1,0 +1,40 @@
+package com.satish.assignment.repository;
+
+import com.satish.assignment.model.User;
+import org.springframework.stereotype.Repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Repository
+public class UserRepository {
+
+    static List<User> users = new ArrayList<>();
+    static int count = 3;
+
+    static {
+        users.add(new User(1, "Satish Reddy", 100.90));
+        users.add(new User(2, "Satti Reddy", 10000.78));
+        users.add(new User(3, "Kethi Reddy", 1234.78));
+    }
+
+    public List<User> getAllUsers() {
+        return users;
+    }
+
+    public User getUserById(int id) {
+        for(User user : users) {
+            if(user.getId() == id) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public void createUser(User user) {
+        if(user != null) {
+            users.add(user);
+            ++count;
+        }
+    }
+}
